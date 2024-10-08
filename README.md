@@ -28,6 +28,52 @@ ctest --output-on-failure
 ./evtol-sim
 ```
 
+## Class Structure
+
+```mermaid
+classDiagram
+    direction LR
+    runner ..* sim :  0-N
+    charging_network --|> sim
+    aircraft --|> sim
+    aircraft ..> charging_network
+   
+    class runner{
+        +runner(time_slice)
+        +add(id, attributes)
+        +sims() range
+        +run(duration)
+        +elapsed() duration
+        +record_event(id, event, data)
+        +events() json
+        +seed_random_engine(seed)
+        +random_engine() engine
+    }
+
+    class sim{
+        +id() string
+        +record_event(event, data)
+        +random_engine() engine
+        #step(time_slice)
+    }
+
+    class charging_network{
+        +available_chargers() unsigned
+        +occupied_chargers() unsigned
+        +plug_in()
+        +plug_out()
+    }
+
+    class aircraft{
+        +aircraft(attributes, charging_network)
+        +get_attributes() attributes
+        +get_statistics() statistics
+        +get_state() state
+        +set_state(state)
+    }
+   
+```
+
 ## Example Simulation
 
 ### Constraints
