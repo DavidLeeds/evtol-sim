@@ -35,15 +35,15 @@ add_subdirectory(thirdparty)
 # Build Simulation Framework
 # -------------------------------
 
-add_library(sim sim.cpp sim.hpp)
+add_library(sim src/sim.cpp src/sim.hpp)
 target_link_libraries(sim PUBLIC nlohmann_json::nlohmann_json)
-#target_include_directories(sim PUBLIC .)
+target_include_directories(sim PUBLIC src)
 
 # -------------------------------
 # Build Simulator
 # -------------------------------
 
-add_executable(evtol-sim main.cpp)
+add_executable(evtol-sim src/main.cpp)
 target_link_libraries(evtol-sim PRIVATE nlohmann_json::nlohmann_json fmt::fmt sim)
 
 # -------------------------------

@@ -5,8 +5,8 @@
  * it under the terms of the MIT license. See LICENSE for details.
  */
 
-#include "../aircraft.hpp"
-#include "../charging_network.hpp"
+#include <aircraft.hpp>
+#include <charging_network.hpp>
 
 #include <ranges>
 

@@ -12,14 +12,14 @@
 ```
 mkdir build
 cd build
-cmake -DEVTOL_BUILD_TESTS=ON
-cmake --build
+cmake -DEVTOL_BUILD_TESTS=ON ..
+cmake --build .
 ```
 
 ### Run Unit Tests
 
 ```
-ctest --output-on-failure
+ctest
 ```
 
 ### Run Simulator

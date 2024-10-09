@@ -5,7 +5,7 @@
  * it under the terms of the MIT license. See LICENSE for details.
  */
 
-#include "../sim.hpp"
+#include <sim.hpp>
 
 #include <ranges>
 
